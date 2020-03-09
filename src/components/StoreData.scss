@@ -1,0 +1,21 @@
+.table {
+  border-collapse: collapse;
+}
+.row { 
+  line-height: 35px;
+  &:hover {
+    background-color: #f0f0f0;
+  }
+  td {
+    min-width: 100px;
+  }  
+}
+
+th {
+  line-height: 35px;
+  &:hover {    
+    background-color: #f0f0f0;
+  }
+}
+
+
