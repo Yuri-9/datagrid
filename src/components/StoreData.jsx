@@ -1,35 +1,28 @@
 import React from 'react';
-import { data } from '../data/dataUser';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import './StoreData.scss';
+import actions from '../actions/index';
 
-// function getRandomArbitrary(min, max) {
-//   return Math.floor(Math.random() * (max - min + 1)) + min;
-// }
-
-// const timeRegistration = () => {
-//   const date = new Date(2019, getRandomArbitrary(5, 8), getRandomArbitrary(1, 30));
-//   return date;
-
-// }
-
-// const dataList = data.map((user, index) => {
-//   delete user.taskResults;
-//   delete user.totalScoreChangeDate;
-//   user.id = index;
-//   user.registration = `${timeRegistration().toLocaleDateString()}`;
-//   user.registrationGetTime = timeRegistration().getTime();
-// return user}
-//   )
+const { sortData } = actions;
 
 function StoreData(props) {
+  const {data, dataSearch, isSortName, input} = props;
+  const currentData = !input.length ? data : dataSearch;
 
-  const storeList = data.map((user, index) => <li key="user.id">{`${index}  ${user.name}`}</li>);
+  const handleClick = () => {
+    const { sortData } = props;
+    const direction = isSortName ? 1 : -1;
+
+    sortData(currentData, direction, 'name');
+  }
+
   return (
-
+    <>
     <table className="table">
       <thead className="sticky">
         <tr>
-          <th>Rank</th>
+          <th onClick={handleClick}>Rank</th>
           <th>Name</th>
           <th>Github ID</th>
           <th>Location</th>
@@ -40,7 +33,7 @@ function StoreData(props) {
         </tr>
       </thead>
       <tbody>
-        {data.map((user) => (
+        {currentData.map((user) => (
           <tr key={user.id} className="row">
             <td>{user.rank}</td>
             <td>{user.name}</td>
@@ -54,7 +47,23 @@ function StoreData(props) {
         ))}
       </tbody>
     </table>
+    </>
   );
 }
 
-export { StoreData };
+
+function mapStateToProps(state) {
+  return {
+    data: state.table.data,
+    dataSearch: state.table.dataSearch,
+    isSortName: state.table.isSortName,
+    input: state.input.input,
+  };
+}
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  sortData,
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(StoreData);
+

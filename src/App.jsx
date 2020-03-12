@@ -1,35 +1,11 @@
 import React from 'react';
 import './App.css';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import Counter from './Counter';
+import Counter from './components/Counter';
 import User from './User';
-import { StoreData } from './components/StoreData';
-
-
-const initialState = {
-  count: 0,
-};
-
-
-function reducer(state = initialState, action) {
-  console.log(action);
-
-  switch (action.type) {
-    case 'INCREMENT':
-      return {
-        count: state.count + 1,
-      };
-    case 'DECREMENT':
-      return {
-        count: state.count - 1,
-      };
-    default:
-      return state;
-  }
-}
-
-const store = createStore(reducer);
+import StoreData from './components/StoreData';
+import Input from './components/Input';
+import store from './store/store';
 
 const user = {
   name: 'Yra',
@@ -37,16 +13,13 @@ const user = {
   date: '1922',
 };
 
-function App() {
+
+function App(props) {
   return (
-    <Provider store={store}>            
+    <Provider store={store}>
         <Counter />
-         
-      {/* <User name={user.name} surname={user.surname} date={user.date}/> */}
-      {/* <section>
-        <label htmlFor='search'>Search </label>
-        <input type='text' value={search} onChange={e => onSearchChange(e.target.value)}/>
-      </section> */}
+      <User {...user}/>
+      <Input />
       <StoreData />
     </Provider>
   );

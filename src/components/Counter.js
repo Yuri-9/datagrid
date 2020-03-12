@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 class Counter extends React.Component {
-
     increment = () => {
         this.props.dispatch({ type: 'INCREMENT' });
     }
@@ -27,7 +26,8 @@ class Counter extends React.Component {
 
 function mapStateToProps(state) {
     return {
-      count: state.count
+      data: state.table.data,
+      count: state.table.count,
     };
   }
 

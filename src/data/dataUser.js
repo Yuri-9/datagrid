@@ -1,3 +1,5 @@
+/* eslint no-use-before-define: 0 */
+
 export const data = [
     {
       "id": 0,
@@ -18360,17 +18362,6 @@ export const data = [
       "registrationGetTime": 1564952400000
     },
     {
-      "id": 1468,
-      "rank": 1469,
-      "name": "",
-      "githubId": "elinakot",
-      "totalScore": 4.5,
-      "locationName": "Minsk",
-      "isActive": false,
-      "registration": "24.09.2019",
-      "registrationGetTime": 1567803600000
-    },
-    {
       "id": 1469,
       "rank": 1470,
       "name": "Yuliya Tsalahuz",
@@ -19648,17 +19639,6 @@ export const data = [
       "locationName": "Saratov",
       "isActive": false,
       "registration": "13.06.2019",
-      "registrationGetTime": 1564174800000
-    },
-    {
-      "id": 1585,
-      "rank": 1586,
-      "name": "",
-      "githubId": "bendz",
-      "totalScore": 2,
-      "locationName": "Bordeaux",
-      "isActive": false,
-      "registration": "15.06.2019",
       "registrationGetTime": 1564174800000
     },
     {
@@ -21239,17 +21219,6 @@ export const data = [
       "registrationGetTime": 1563742800000
     },
     {
-      "id": 1729,
-      "rank": 1730,
-      "name": "",
-      "githubId": "vovtornik",
-      "totalScore": 1,
-      "locationName": "Karaganda",
-      "isActive": false,
-      "registration": "11.06.2019",
-      "registrationGetTime": 1561928400000
-    },
-    {
       "id": 1730,
       "rank": 1731,
       "name": "Anton Kosar",
@@ -21303,17 +21272,6 @@ export const data = [
       "isActive": false,
       "registration": "23.08.2019",
       "registrationGetTime": 1561669200000
-    },
-    {
-      "id": 1735,
-      "rank": 1736,
-      "name": "",
-      "githubId": "kopchikovich",
-      "totalScore": 1,
-      "locationName": "Khabarovsk",
-      "isActive": false,
-      "registration": "16.06.2019",
-      "registrationGetTime": 1563570000000
     },
     {
       "id": 1736,
@@ -23942,17 +23900,6 @@ export const data = [
       "registrationGetTime": 1566594000000
     },
     {
-      "id": 1974,
-      "rank": 1975,
-      "name": "",
-      "githubId": "patria-aeterna",
-      "totalScore": 0,
-      "locationName": "Minsk",
-      "isActive": false,
-      "registration": "14.07.2019",
-      "registrationGetTime": 1567112400000
-    },
-    {
       "id": 1975,
       "rank": 1976,
       "name": "Vladislav Kadaiev",
@@ -24732,17 +24679,6 @@ export const data = [
       "isActive": false,
       "registration": "13.06.2019",
       "registrationGetTime": 1562965200000
-    },
-    {
-      "id": 2046,
-      "rank": 2047,
-      "name": "",
-      "githubId": "psigfry",
-      "totalScore": 0,
-      "locationName": "Moscow",
-      "isActive": false,
-      "registration": "01.06.2019",
-      "registrationGetTime": 1562274000000
     },
     {
       "id": 2047,
@@ -26850,17 +26786,6 @@ export const data = [
       "registrationGetTime": 1567890000000
     },
     {
-      "id": 2238,
-      "rank": 2239,
-      "name": "",
-      "githubId": "4wesome228",
-      "totalScore": 0,
-      "locationName": "Minsk",
-      "isActive": false,
-      "registration": "03.08.2019",
-      "registrationGetTime": 1561410000000
-    },
-    {
       "id": 2239,
       "rank": 2240,
       "name": "Ivan Orlovsky",
@@ -28456,17 +28381,6 @@ export const data = [
       "registrationGetTime": 1562965200000
     },
     {
-      "id": 2384,
-      "rank": 2385,
-      "name": "",
-      "githubId": "nazarpunk",
-      "totalScore": 0,
-      "locationName": "Donetsk",
-      "isActive": false,
-      "registration": "27.06.2019",
-      "registrationGetTime": 1567458000000
-    },
-    {
       "id": 2385,
       "rank": 2386,
       "name": "Gleb Potapov",
@@ -29206,17 +29120,6 @@ export const data = [
       "isActive": false,
       "registration": "22.09.2019",
       "registrationGetTime": 1561582800000
-    },
-    {
-      "id": 2452,
-      "rank": 2453,
-      "name": "",
-      "githubId": "baural",
-      "totalScore": 0,
-      "locationName": "Astana",
-      "isActive": false,
-      "registration": "09.06.2019",
-      "registrationGetTime": 1565038800000
     },
     {
       "id": 2453,
@@ -34481,17 +34384,6 @@ export const data = [
       "registrationGetTime": 1560978000000
     },
     {
-      "id": 2931,
-      "rank": 2932,
-      "name": "",
-      "githubId": "fatalen",
-      "totalScore": 0,
-      "locationName": "Novosibirsk",
-      "isActive": false,
-      "registration": "18.09.2019",
-      "registrationGetTime": 1566766800000
-    },
-    {
       "id": 2932,
       "rank": 2933,
       "name": "Fake User",
@@ -36327,17 +36219,6 @@ export const data = [
       "isActive": false,
       "registration": "16.08.2019",
       "registrationGetTime": 1568667600000
-    },
-    {
-      "id": 3099,
-      "rank": 3100,
-      "name": "",
-      "githubId": "chinesedfan",
-      "totalScore": 0,
-      "locationName": "Shanghai",
-      "isActive": false,
-      "registration": "14.06.2019",
-      "registrationGetTime": 1562965200000
     },
     {
       "id": 3100,

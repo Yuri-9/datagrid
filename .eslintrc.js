@@ -3,7 +3,7 @@ module.exports = {
         "browser": true,
         "es6": true
     },
-    // "extends": "airbnb", 
+    "extends": ["react-app", "plugin:jsx-a11y/recommended"],
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -12,7 +12,8 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "jsx-a11y"
     ],
     "rules": {
     }
