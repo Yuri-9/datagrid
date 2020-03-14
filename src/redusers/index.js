@@ -1,3 +1,4 @@
+import { combineReducers } from 'redux';
 import { data } from '../data/dataUser';
 
 const initialData = {
@@ -19,8 +20,6 @@ const table = (state = initialData, action) => {
       return { ...state, count: state.count - 1 };
     case 'SEARCH':
       return { ...state, dataSearch: action.payload };
-    case 'IS_SORT_NAME':
-      return { ...state, dataSearch: action.payload, isSortName: !state.isSortName };
     default:
       return state;
   }
@@ -35,4 +34,19 @@ const input = (state = initialInput, action) => {
   }
 };
 
-export default { table, input };
+const filter = (state = 'rank', action) => {
+  console.log(action.type)
+  switch (action.type) {
+    case 'SET_FILTER':
+      return action.filter
+    default:
+      return state
+  }
+}
+
+export default combineReducers({
+  table,
+  input,
+  filter
+})
+
