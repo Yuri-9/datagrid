@@ -3,21 +3,34 @@ import actions from '../actions/index';
 import { connect } from 'react-redux';
 
 const Arrow = (props) => {
-  const {onClick} = props;
+  const {onClick, isClickArrowUp, isClickArrowDown, active } = props;
+
 
   return (
-    <i className="material-icons" onClick={onClick} >
-    keyboard_arrow_down
-    </i>
+    <div className="arrows_box">
+      <i
+      className="material-icons"
+      onClick={() => onClick('arrowAp')}
+      style={{color: active && isClickArrowUp ? 'red' :'#cac7c7' }}>
+        keyboard_arrow_up
+      </i>
+      <i className="material-icons"
+      onClick={() => onClick('arrowDown')}
+      style={{color: active && isClickArrowDown ? 'red' :'#cac7c7' }}>
+        keyboard_arrow_down
+      </i>
+    </div>
   );
 };
 
 const mapStateToProps = (state, ownProps) => ({
-  active: ownProps.filter === state.filter
+  active: ownProps.filter === state.getFilter.filter,
+  isClickArrowUp: state.getFilter.isClickArrowUp,
+  isClickArrowDown: state.getFilter.isClickArrowDown,
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  onClick: () => dispatch(actions.setFilter(ownProps.filter))
+  onClick: (typeClickArrow) => dispatch(actions.setFilter(ownProps.filter, typeClickArrow))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Arrow)

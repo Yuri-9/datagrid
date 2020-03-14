@@ -12,9 +12,10 @@ const actions = {
     }
   ),
 
-  setFilter: (filter) => ({
+  setFilter: (filter, typeClickArrow) => ({
     type: 'SET_FILTER',
-    filter
+    filter,
+    typeClickArrow,
   })
 }
 

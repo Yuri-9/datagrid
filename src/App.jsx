@@ -17,10 +17,12 @@ const user = {
 function App(props) {
   return (
     <Provider store={store}>
+      <div className="wrapper">
         <Counter />
-      <User {...user}/>
-      <Input />
-      <StoreData />
+        <User {...user}/>
+        <Input />
+        <StoreData />
+      </div>
     </Provider>
   );
 }

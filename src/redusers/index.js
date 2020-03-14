@@ -12,6 +12,14 @@ const initialInput = {
   input: {},
 };
 
+
+const initialFilter = {
+  filter: 'rank',
+  isClickArrayUp: false,
+  isClickArrayDown: false,
+};
+
+
 const table = (state = initialData, action) => {
     switch (action.type) {
     case 'INCREMENT':
@@ -34,11 +42,15 @@ const input = (state = initialInput, action) => {
   }
 };
 
-const filter = (state = 'rank', action) => {
+const getFilter = (state = initialFilter, action) => {
   console.log(action.type)
   switch (action.type) {
     case 'SET_FILTER':
-      return action.filter
+      return {
+        filter: action.filter,
+        isClickArrowUp: action.typeClickArrow === 'arrowAp' ? true : false,
+        isClickArrowDown: action.typeClickArrow === 'arrowDown' ? true : false,
+      }
     default:
       return state
   }
@@ -47,6 +59,6 @@ const filter = (state = 'rank', action) => {
 export default combineReducers({
   table,
   input,
-  filter
+  getFilter
 })
 

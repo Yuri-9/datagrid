@@ -1,10 +1,6 @@
-.material-icons {
-  vertical-align: middle;
-  cursor: pointer;
-  width: 24px;
-  &:after{
-    content: '1';
-  }
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 

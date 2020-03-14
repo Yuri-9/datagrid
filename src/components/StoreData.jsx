@@ -42,38 +42,40 @@ function StoreData(props) {
 }
 
 
-const getFilterTable = (data, dataSearch, filter, input) => {
-   const currentData = !input.length ? data : dataSearch;
+const getFilterTable = (data, dataSearch, getFilter, input) => {
+  const currentData = !input.length ? data : dataSearch;
+  const { filter, isClickArrowUp } = getFilter;
+  const direction = isClickArrowUp ? 1 : -1;
   switch (filter) {
     case 'rank':
-      return currentData.sort((a, b) => {return (a[filter] - b[filter]) * 1});
+      return currentData.sort((a, b) => (a[filter] - b[filter]) * direction);
     case 'name':
-      return currentData.sort((a, b) => ('' + a[filter]).localeCompare(b[filter]) * -1 );
+      return currentData.sort((a, b) => ('' + a[filter]).localeCompare(b[filter]) * direction );
     case 'githubId':
-      return currentData.sort((a, b) => ('' + a[filter]).localeCompare(b[filter]) * -1 );
+      return currentData.sort((a, b) => ('' + a[filter]).localeCompare(b[filter]) * direction );
     case 'location':
-      return currentData.sort((a, b) => ('' + a[filter]).localeCompare(b[filter]) * -1 );
+      return currentData.sort((a, b) => ('' + a[filter]).localeCompare(b[filter]) * direction );
     case 'score':
-      return currentData.sort((a, b) => {return (a[filter] - b[filter]) * -1});
+      return currentData.sort((a, b) => (a[filter] - b[filter]) * direction);
     case 'isActive':
-      return currentData.sort((a, b) => {return (a[filter] === b[filter]) ? 0 : a[filter] ? -1 : 1;});
+      return currentData.sort((a, b) => ((a[filter] === b[filter]) ? 0 : a[filter] ? -1 : 1) * direction);
     case 'registration':
-      return currentData.sort((a, b) => {return (new Date(a[filter]) - new Date(b[filter])) * -1});
+      return currentData.sort((a, b) => (new Date(a[filter]) - new Date(b[filter])) * direction);
     case 'registrationGetTime':
-      return currentData.sort((a, b) => {return (a[filter] - b[filter]) * -1});
+      return currentData.sort((a, b) => (a[filter] - b[filter]) * direction);
     default:
       throw new Error('Unknown filter: ' + filter)
   }
 }
 
 function mapStateToProps(state) {
-  const {table: {data, dataSearch, isSortName }, filter, input: { input } } = state;
+  const {table: {data, dataSearch, isSortName }, getFilter, input: { input } } = state;
   return {
     data,
-    currentData: getFilterTable(data, dataSearch, filter, input),
+    currentData: getFilterTable(data, dataSearch, getFilter, input),
     isSortName,
     input,
-    filter,
+    getFilter,
   };
 }
 
