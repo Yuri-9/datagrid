@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import Counter from './components/Counter';
 import User from './User';
 import StoreData from './components/StoreData';
-import Input from './components/Input';
 import store from './store/store';
 
 const user = {
@@ -20,7 +19,6 @@ function App(props) {
       <div className="wrapper">
         <Counter />
         <User {...user}/>
-        <Input />
         <StoreData />
       </div>
     </Provider>

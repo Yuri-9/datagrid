@@ -15,10 +15,10 @@ const Input = (props) => {
   }
 
   return (
-    <section>
+    <>
       <label htmlFor="search">Search </label>
       <input type="text" value={txt} onChange={handleChange} />
-    </section>
+    </>
   );
 };
 

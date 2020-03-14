@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './StoreData.scss';
+import { getFilterTable } from '../utils/getFilterTable';
+import Select from './Select';
+import Input from './Input';
 
 import Arrow from './Arrow';
 
@@ -9,6 +12,7 @@ function StoreData(props) {
 
   return (
     <>
+    <span><Input />{`Number user ${currentData.length}`}</span>
     <table className="table">
       <thead className="sticky">
         <tr>
@@ -19,7 +23,7 @@ function StoreData(props) {
           <th>Score <Arrow filter="score" /></th>
           <th>Date registration<Arrow filter="registration" /></th>
           <th>Time registration <Arrow filter="registrationGetTime" /></th>
-          <th>Active <Arrow filter="isActive" /></th>
+          <th>{`Active `}<Select /></th>
         </tr>
       </thead>
       <tbody>
@@ -32,7 +36,7 @@ function StoreData(props) {
             <td>{user.score.toLocaleString()}</td>
             <td>{user.registration}</td>
             <td>{user.registrationGetTime}</td>
-            <td>{user.isActive ? 'yes' : 'no'}</td>
+            <td>{user.isActive ? 'Yes' : 'No'}</td>
           </tr>
         ))}
       </tbody>
@@ -41,35 +45,8 @@ function StoreData(props) {
   );
 }
 
-
-const getFilterTable = (data, dataSearch, getFilter, input) => {
-  const currentData = !input.length ? data : dataSearch;
-  const { filter, isClickArrowUp } = getFilter;
-  const direction = isClickArrowUp ? 1 : -1;
-  switch (filter) {
-    case 'rank':
-      return currentData.sort((a, b) => (a[filter] - b[filter]) * direction);
-    case 'name':
-      return currentData.sort((a, b) => ('' + a[filter]).localeCompare(b[filter]) * direction );
-    case 'githubId':
-      return currentData.sort((a, b) => ('' + a[filter]).localeCompare(b[filter]) * direction );
-    case 'location':
-      return currentData.sort((a, b) => ('' + a[filter]).localeCompare(b[filter]) * direction );
-    case 'score':
-      return currentData.sort((a, b) => (a[filter] - b[filter]) * direction);
-    case 'isActive':
-      return currentData.sort((a, b) => ((a[filter] === b[filter]) ? 0 : a[filter] ? -1 : 1) * direction);
-    case 'registration':
-      return currentData.sort((a, b) => (new Date(a[filter]) - new Date(b[filter])) * direction);
-    case 'registrationGetTime':
-      return currentData.sort((a, b) => (a[filter] - b[filter]) * direction);
-    default:
-      throw new Error('Unknown filter: ' + filter)
-  }
-}
-
 function mapStateToProps(state) {
-  const {table: {data, dataSearch, isSortName }, getFilter, input: { input } } = state;
+  const {table: {data, dataSearch, isSortName }, getFilter, input: { input }} = state;
   return {
     data,
     currentData: getFilterTable(data, dataSearch, getFilter, input),

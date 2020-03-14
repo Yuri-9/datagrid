@@ -17,6 +17,7 @@ const initialFilter = {
   filter: 'rank',
   isClickArrayUp: false,
   isClickArrayDown: false,
+  selectValue: 'All',
 };
 
 
@@ -43,14 +44,16 @@ const input = (state = initialInput, action) => {
 };
 
 const getFilter = (state = initialFilter, action) => {
-  console.log(action.type)
   switch (action.type) {
     case 'SET_FILTER':
       return {
+        ...state,
         filter: action.filter,
         isClickArrowUp: action.typeClickArrow === 'arrowAp' ? true : false,
         isClickArrowDown: action.typeClickArrow === 'arrowDown' ? true : false,
       }
+    case 'SET_SELECT':
+      return {...state, selectValue: action.selectValue }
     default:
       return state
   }

@@ -16,6 +16,11 @@ const actions = {
     type: 'SET_FILTER',
     filter,
     typeClickArrow,
+  }),
+
+  setSelect: (selectValue) => ({
+    type: 'SET_SELECT',
+    selectValue,
   })
 }
 
