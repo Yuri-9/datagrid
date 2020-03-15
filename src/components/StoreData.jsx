@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import './StoreData.scss';
 import { getFilterTable } from '../utils/getFilterTable';
 import Select from './Select';
+import SelectRole from './SelectRole';
 import Input from './Input';
 
 import Arrow from './Arrow';
@@ -18,7 +19,8 @@ function StoreData(props) {
         <tr>
           <th>Rank <Arrow filter="rank" /></th>
           <th>Name <Arrow filter="name"/></th>
-          <th>Github ID <Arrow filter="githubId"/></th>
+          <th>Github<Arrow filter="githubId"/></th>
+          <th>{`Role `}<SelectRole /></th>
           <th>Location <Arrow filter="location"/></th>
           <th>Score <Arrow filter="score" /></th>
           <th>Date registration<Arrow filter="registration" /></th>
@@ -32,6 +34,7 @@ function StoreData(props) {
             <td>{user.rank}</td>
             <td>{user.name}</td>
             <td>{user.githubId}</td>
+            <td>{user.role}</td>
             <td>{user.location}</td>
             <td>{user.score.toLocaleString()}</td>
             <td>{user.registration}</td>

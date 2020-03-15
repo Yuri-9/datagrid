@@ -19,10 +19,8 @@ const Select = (props) => {
 };
 
 
-const mapStateToProps = (state, ownProps) => ({
-  active: ownProps.filter === state.getFilter.filter,
-  isClickArrowUp: state.getFilter.isClickArrowUp,
-  isClickArrowDown: state.getFilter.isClickArrowDown,
+const mapStateToProps = () => ({
+
 })
 
 const mapDispatchToProps = (dispatch) => ({

@@ -18,6 +18,7 @@ const initialFilter = {
   isClickArrayUp: false,
   isClickArrayDown: false,
   selectValue: 'All',
+  listSelectRole: [],
 };
 
 
@@ -54,6 +55,8 @@ const getFilter = (state = initialFilter, action) => {
       }
     case 'SET_SELECT':
       return {...state, selectValue: action.selectValue }
+    case 'SET_SELECT_ROLE':
+      return {...state, listSelectRole: action.listSelectRole }
     default:
       return state
   }

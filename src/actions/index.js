@@ -21,7 +21,13 @@ const actions = {
   setSelect: (selectValue) => ({
     type: 'SET_SELECT',
     selectValue,
+  }),
+
+  setSelectRole: (listSelectRole) => ({
+    type: 'SET_SELECT_ROLE',
+    listSelectRole,
   })
+
 }
 
 

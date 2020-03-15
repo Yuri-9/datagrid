@@ -1,15 +1,17 @@
 const getFilterTable = (data, dataSearch, getFilter, input) => {
-  const { filter, isClickArrowUp, selectValue } = getFilter;
-  const currentData2 = !input.length ? data : dataSearch;
+  const { filter, isClickArrowUp, selectValue, listSelectRole } = getFilter;
+  let currentData = !input.length ? data : dataSearch;
   const direction = isClickArrowUp ? 1 : -1;
-  let currentData;
+
+
+  if (listSelectRole.length > 0) {
+  currentData = currentData.filter((user) => listSelectRole.includes(user.role))
+  };
 
   if (selectValue === 'Yes') {
-    currentData = currentData2.filter(user => user.isActive === true)
+    currentData = currentData.filter(user => user.isActive === true)
   } else if (selectValue === 'No') {
-    currentData = currentData2.filter(user => user.isActive === false)
-  } else {
-  currentData = currentData2;
+    currentData = currentData.filter(user => user.isActive === false)
   }
 
   switch (filter) {
