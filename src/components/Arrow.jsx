@@ -1,6 +1,7 @@
 import React from 'react';
 import actions from '../actions/index';
 import { connect } from 'react-redux';
+import './Arrow.scss';
 
 const Arrow = (props) => {
   const {onClick, isClickArrowUp, isClickArrowDown, active } = props;

@@ -15,6 +15,7 @@ const getFilterTable = (data, dataSearch, getFilter, input) => {
   }
 
   switch (filter) {
+
     case 'rank':
       return currentData.sort((a, b) => (a[filter] - b[filter]) * direction);
     case 'name':
