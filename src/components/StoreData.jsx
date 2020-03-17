@@ -32,9 +32,8 @@ class StoreData extends Component {
     const { currentData } = this.props;
 
     return (
-
       <>
-        <span className="input"><Input />{`Number user ${currentData.length}`}</span>
+        <span className="input"><Input />{`Number Users ${currentData.length}`}</span>
         <div className="table">
           <div
            className="scroll"

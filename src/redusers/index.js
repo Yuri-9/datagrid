@@ -12,7 +12,7 @@ const initialInput = {
 
 
 const initialFilter = {
-  filter: 'rank',
+  filter: 'score',
   isClickArrayUp: false,
   isClickArrayDown: false,
   selectValue: 'All',

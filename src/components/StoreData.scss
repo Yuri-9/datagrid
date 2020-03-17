@@ -29,6 +29,10 @@
   .th{
     z-index: 100;
     opacity: 1;
+    background-color: gray !important;
+    .name {
+     border-bottom: 2px solid !important;
+    }
   }
   .rank, .isActive{
     width: 90px;
@@ -42,7 +46,12 @@
   .role, .location, .score, .registration, .registrationGetTime{
     width: 190px;
   }
-  .rank, .name{
+  .th.rank, .th.name{
+    position: sticky;
+    box-sizing: border-box;
+  }
+
+  .td.rank, .td.name{
     position: sticky;
     border-bottom: 1px solid #d8d6d6;
     box-sizing: border-box;

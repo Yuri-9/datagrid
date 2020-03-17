@@ -2,7 +2,7 @@ const getFilterTable = (data, dataSearch, getFilter, input) => {
   const { filter, isClickArrowUp, selectValue, listSelectRole } = getFilter;
   let currentData = !input.length ? data : dataSearch;
   const direction = isClickArrowUp ? 1 : -1;
-
+console.log(dataSearch)
 
   if (listSelectRole.length > 0) {
   currentData = currentData.filter((user) => listSelectRole.includes(user.role))
