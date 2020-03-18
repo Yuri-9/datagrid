@@ -6,6 +6,7 @@ import SelectRole from './SelectRole';
 import Input from './Input';
 import VirtualTable from './VirtualTable';
 import { getFilterTable } from '../utils/getFilterTable';
+import ButtonDefaultFilter from './ButtonDefaultFilter';
 
 import Arrow from './Arrow';
 
@@ -33,7 +34,8 @@ class StoreData extends Component {
 
     return (
       <>
-        <span className="input"><Input />{`Number Users ${currentData.length}`}</span>
+        <span className="input"><Input />{`  ${currentData.length} users `}</span>
+        <ButtonDefaultFilter />
         <div className="table">
           <div
            className="scroll"
@@ -63,9 +65,9 @@ class StoreData extends Component {
 }
 
 function mapStateToProps(state) {
-  const {table: {data, dataSearch }, getFilter, input: { input }} = state;
+  const {table: {data, dataSearch }, getFilter, input: { inputValue }} = state;
   return {
-    currentData: getFilterTable(data, dataSearch, getFilter, input),
+    currentData: getFilterTable(data, dataSearch, getFilter, inputValue),
   };
 }
 

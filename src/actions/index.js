@@ -1,11 +1,10 @@
-const listItemSrting = ['rank','name', 'githubId', 'role', 'location', 'score', 'registration',  'registrationGetTime'];
-const getSearch = (dataSearch, value) => dataSearch.filter((user) => listItemSrting.some(item => user[item].toString().toLowerCase().includes(value.toLowerCase())));
+import getSearch from '../utils/getSearch';
 
 const actions = {
-  updateInput: (input) => (
+  updateInput: (inputValue) => (
     {
       type: 'UPDATE_INPUT',
-      payload: {txt: input, length: input.length},
+      payload: inputValue,
     }
   ),
   search: (dataSearch, value) => (

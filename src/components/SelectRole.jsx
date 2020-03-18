@@ -19,8 +19,9 @@ const SelectRole = (props) => {
   }
 
   return (
-    <select onChange={onChangeSelect}>
+    <select onChange={onChangeSelect} value={listSelectRole}>
     <option value="" >
+      All
     </option>
     <option
       value="mentor"

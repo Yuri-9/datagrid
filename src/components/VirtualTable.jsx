@@ -31,10 +31,10 @@ const VirtualTable = (props) => {
 }
 
 function mapStateToProps(state) {
-  const {table: {data, dataSearch, }, getFilter, input: { input }} = state;
+  const {table: {data, dataSearch, }, getFilter, input: { inputValue }} = state;
   return {
     getFilter,
-    currentData: getFilterTable(data, dataSearch, getFilter, input),
+    currentData: getFilterTable(data, dataSearch, getFilter, inputValue),
   };
 }
 

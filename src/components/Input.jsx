@@ -6,7 +6,7 @@ import actions from '../actions/index';
 const { search, updateInput } = actions;
 
 const Input = (props) => {
-  const { input: { txt = '' } } = props;
+  const { inputValue } = props;
 
   const handleChange = (e) => {
     const { data, search, updateInput } = props;
@@ -17,7 +17,7 @@ const Input = (props) => {
   return (
     <>
       <label htmlFor="search">Search </label>
-      <input type="text" value={txt} onChange={handleChange} />
+      <input type="text" value={inputValue} onChange={handleChange} />
     </>
   );
 };
@@ -27,7 +27,7 @@ function mapStateToProps(state) {
     data: state.table.data,
     dataSearch: state.table.dataSearch,
     isSortName: state.table.isSortName,
-    input: state.input.input,
+    inputValue: state.input.inputValue,
   };
 }
 

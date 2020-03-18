@@ -6,12 +6,14 @@ import './Arrow.scss';
 const Arrow = (props) => {
   const {onClick, isClickArrowUp, isClickArrowDown, active } = props;
 
+  console.log(active, isClickArrowUp);
+  console.log(active, isClickArrowDown);
 
   return (
     <div className="arrows_box">
       <i
       className="material-icons"
-      onClick={() => onClick('arrowAp')}
+      onClick={() => onClick('arrowUp')}
       style={{color: active && isClickArrowUp ? 'red' :'#cac7c7' }}>
         keyboard_arrow_up
       </i>
