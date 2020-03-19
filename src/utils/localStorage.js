@@ -21,10 +21,3 @@ window.onbeforeunload = function setLocalStorage() {
   localStorage.setItem('listSelectRole', listSelectRole);
   localStorage.setItem('inputValue', inputValue);
 }
-
-console.log('filter', localStorage.getItem('filter'));
-console.log('isClickArrowUp', localStorage.getItem('isClickArrowUp'));
-console.log('isClickArrowDown', localStorage.getItem('isClickArrowDown'));
-console.log('selectValue', localStorage.getItem('selectValue'));
-console.log('listSelectRole', localStorage.getItem('listSelectRole'));
-console.log('inputValue', localStorage.getItem('inputValue'));

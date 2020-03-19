@@ -6,7 +6,6 @@ import SelectRole from './SelectRole';
 import Input from './Input';
 import VirtualTable from './VirtualTable';
 import { getFilterTable } from '../utils/getFilterTable';
-import ButtonDefaultFilter from './ButtonDefaultFilter';
 
 import Arrow from './Arrow';
 
@@ -35,7 +34,6 @@ class StoreData extends Component {
     return (
       <>
         <span className="input"><Input />{`  ${currentData.length} users `}</span>
-        <ButtonDefaultFilter />
         <div className="table">
           <div
            className="scroll"

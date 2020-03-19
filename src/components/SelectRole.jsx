@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 
 const SelectRole = (props) => {
   const { onChange, listSelectRole } = props;
-
+  let valueView;
   const onChangeSelect = ({target: {value}}) => {
+    valueView = value;
     const [...listSelect] = listSelectRole;
     if (!value) {
       return onChange([]);
@@ -19,7 +20,7 @@ const SelectRole = (props) => {
   }
 
   return (
-    <select onChange={onChangeSelect} value={listSelectRole}>
+    <select onChange={onChangeSelect} value={listSelectRole.length === 0 ? "" : valueView}>
     <option value="" >
       All
     </option>

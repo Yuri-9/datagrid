@@ -59,6 +59,7 @@
   }
   .rank {
     left: 0;
+    z-index: 120;
   }
   .name{
     left: 90px;
@@ -81,4 +82,13 @@
 .input {
   position: absolute;
   top: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .tr .td.name{
+    position: absolute;
+  }
+  .tr .th.name{
+    position: absolute;
+}
 }

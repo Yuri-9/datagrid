@@ -5,10 +5,6 @@ import './Arrow.scss';
 
 const Arrow = (props) => {
   const {onClick, isClickArrowUp, isClickArrowDown, active } = props;
-
-  console.log(active, isClickArrowUp);
-  console.log(active, isClickArrowDown);
-
   return (
     <div className="arrows_box">
       <i
