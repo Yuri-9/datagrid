@@ -7,6 +7,7 @@ const inputValue = localStorage.getItem('inputValue') || "";
 const initialData = {
   data,
   dataSearch: getSearch(data, inputValue),
+  listColumns: ['name', 'gitHub', 'role', 'location', 'score', 'registration', 'registrationGetTime', 'active'],
 };
 
 const initialInput = {
@@ -27,6 +28,8 @@ const table = (state = initialData, action) => {
     switch (action.type) {
     case 'SEARCH':
       return { ...state, dataSearch: action.payload};
+      case 'SHOW_COLUMN':
+      return { ...state, listColumns: action.listColumns};
     default:
       return state;
   }

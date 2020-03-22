@@ -1,0 +1,42 @@
+.checkbox {
+  position:Relative;
+  width:200px;
+  height:20px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  cursor: pointer;
+  &--label {
+    display: block;
+    width: 200px;
+    &:hover {
+      background-color: #d8d6d6;
+    }
+  }
+}
+
+ul{
+  list-style:none;
+  margin:0;
+}
+
+ul li{
+    position:Relative;
+    width:200px;
+    height:20px;
+}
+.drop {
+    position:absolute;
+    display:none;
+    left:-40px;
+    z-index: 200;
+    border:1px solid black;
+}
+.drop li{
+  margin-top:2px;
+  display:block;
+  text-align: left;
+  background-color: white;
+}
+.checkbox:hover .drop{
+  display:Block;
+}

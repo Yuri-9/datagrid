@@ -14,6 +14,11 @@ const actions = {
     }
   ),
 
+  showColumn: (listColumns) => ({
+    type: 'SHOW_COLUMN',
+    listColumns,
+  }),
+
   setFilter: (filter, typeClickArrow) => ({
     type: 'SET_FILTER',
     filter,
