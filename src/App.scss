@@ -1,0 +1,23 @@
+#root {
+  margin-left: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+.header {
+  height: 50px;
+  padding-top: 45px;
+}
+
+.main {
+  overflow: auto;
+  height: 95vh;
+}
+
+
+
+

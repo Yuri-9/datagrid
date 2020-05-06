@@ -1,0 +1,92 @@
+.table {
+  width: 100%;
+  height: 100%;
+}
+.scroll {
+  position: relative;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  }
+.tr {
+  position: absolute;
+  border-bottom: 1px solid #d8d6d6;
+  box-sizing: border-box;
+  &:hover {
+    background-color: #fafafa;
+  }
+  .th, .td {
+    height: 35px;
+    float: left;
+    line-height: 35px;
+  }
+  .th{
+    z-index: 100;
+    opacity: 1;
+    background-color: gray !important;
+    .name {
+     border-bottom: 2px solid !important;
+    }
+  }
+  .rank, .isActive{
+    width: 90px;
+    padding-left: 5px;
+  }
+
+  .name, .gitHub{
+    width: 230px;
+  }
+
+  .role, .location, .score, .registration, .registrationGetTime{
+    width: 190px;
+  }
+  .th.rank, .th.name{
+    position: sticky;
+    box-sizing: border-box;
+  }
+
+  .td.rank, .td.name{
+    position: sticky;
+    border-bottom: 1px solid #d8d6d6;
+    box-sizing: border-box;
+    background-color: white;
+  }
+  .rank {
+    left: 0;
+    z-index: 120;
+  }
+  .name{
+    left: 90px;
+  }
+}
+
+.sticky {
+  height: 35px;
+  position: sticky;
+  top: 0;
+  background-color: #fafafa;
+}
+
+
+.list {
+  position: relative;
+}
+
+.input {
+  position: absolute;
+  top: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .tr .td.name{
+    position: absolute;
+
+  }
+  .tr .th.name{
+    position: absolute;
+}
+}

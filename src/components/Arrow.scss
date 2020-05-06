@@ -1,0 +1,14 @@
+.arrows_box{
+  display: inline-grid;;
+  .material-icons {
+    color: #cac7c7;
+    vertical-align: middle;
+    cursor: pointer;
+    font-size: 17px;
+    line-height: 0.7;
+    width: 20px;
+    &::after{
+      display: none;
+    }
+  }
+}
